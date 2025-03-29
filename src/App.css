@@ -1,0 +1,121 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  height: 4em;
+  padding: 1em;
+  will-change: filter, transform;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 1.5em #00d4ffaa);
+  transform: rotate(360deg);
+}
+.logo.nasa:hover {
+  filter: drop-shadow(0 0 1.5em #ff4081aa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1em 0;
+}
+
+.discover-button, .ban-button {
+  border-radius: 12px;
+  border: none;
+  padding: 1em 2em;
+  font-size: 1.5em;
+  font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discover-button {
+  background: linear-gradient(45deg, #ff4081, #00d4ff);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.ban-button {
+  background: linear-gradient(45deg, #ff5555, #ff9999);
+  box-shadow: 0 0 20px rgba(255, 85, 85, 0.3);
+}
+
+.discover-button:hover, .ban-button:hover {
+  transform: scale(1.1);
+}
+
+.discover-button:hover {
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+}
+
+.ban-button:hover {
+  box-shadow: 0 0 30px rgba(255, 85, 85, 0.6);
+}
+
+.discover-button:disabled, .ban-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@keyframes backgroundCycle {
+  0% { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+  33% { background: linear-gradient(135deg, #2e1a47 0%, #3e1659 50%, #601f8a 100%); }
+  66% { background: linear-gradient(135deg, #1a2e47 0%, #163e59 50%, #1f608a 100%); }
+  100% { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+}
+
+body {
+  animation: backgroundCycle 20s infinite;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .discover-button, .ban-button {
+    font-size: 1.2em;
+    padding: 0.8em 1.5em;
+  }
+}

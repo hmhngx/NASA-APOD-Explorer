@@ -1,0 +1,90 @@
+:root {
+  font-family: 'Orbitron', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #e0f7fa;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%231a1a2e" width="100" height="100"/><circle fill="%23ffffff" cx="10" cy="10" r="1"/><circle fill="%23ffffff" cx="90" cy="20" r="1.5"/><circle fill="%23ffffff" cx="30" cy="80" r="1"/><circle fill="%23ffffff" cx="70" cy="60" r="1.2"/><circle fill="%23ffffff" cx="50" cy="40" r="0.8"/></svg>') repeat, linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #00d4ff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #ff4081;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+h1, h2, h3 {
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  color: #00d4ff;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+  opacity: 0.3;
+  pointer-events: none;
+  animation: nebulaGlow 15s infinite alternate;
+}
+
+@keyframes nebulaGlow {
+  0% { transform: scale(1); opacity: 0.3; }
+  100% { transform: scale(1.2); opacity: 0.5; }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #e0f7fa;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%234a00e0" width="100" height="100"/><circle fill="%23ffffff" cx="10" cy="10" r="1"/><circle fill="%23ffffff" cx="90" cy="20" r="1.5"/><circle fill="%23ffffff" cx="30" cy="80" r="1"/><circle fill="%23ffffff" cx="70" cy="60" r="1.2"/><circle fill="%23ffffff" cx="50" cy="40" r="0.8"/></svg>') repeat, linear-gradient(135deg, #4a00e0 0%, #8e2de2 100%);
+  }
+  a:hover {
+    color: #ff80ab;
+  }
+  button {
+    background: linear-gradient(45deg, #ff80ab, #4a00e0);
+  }
+}
