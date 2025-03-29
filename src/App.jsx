@@ -25,7 +25,7 @@ function App() {
       try {
         const response = await axios.get('https://api.nasa.gov/planetary/apod', {
           params: {
-            api_key: hCeo0CKdbpZpkboOiiOlXQAu7sgpWoa5D7oYIlEa,
+            api_key: "hCeo0CKdbpZpkboOiiOlXQAu7sgpWoa5D7oYIlEa",
             count: 1,
           },
         });
